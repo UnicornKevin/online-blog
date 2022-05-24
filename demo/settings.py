@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'article',
 ]
 
 MIDDLEWARE = [
@@ -73,16 +74,12 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'jdbc:mysql://47.102.220.21:3306/javase?characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true', # 数据库引擎
-#         'NAME': 'django_mysql', # 数据库名
-#         'USER': 'Yu_Ban81', # 账号
-#         'PASSWORD': 'yuban', # 密码
-#         'HOST': '127.0.0.1', # HOST
-#         'POST': 8000, # 端口
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
